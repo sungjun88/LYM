@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb.mybatis.mapper">
+
+	<select id="idchk" resultType="com.hb.mybatis.VO" parameterType="String">
+		select * from project2 where id = #{id}
+	</select>
+	
+	<select id="login" resultType="com.hb.mybatis.VO" parameterType="com.hb.mybatis.VO">
+		select * from project2 where id = #{id} and pwd = #{pwd}
+	</select>
+	
+	<insert id="getjoin" parameterType="com.hb.mybatis.VO">
+		insert into project2(idx, id, pwd, email) values(project2_seq.nextval,#{id},#{pwd},#{email})
+	</insert>
+</mapper>
