@@ -203,7 +203,7 @@ img {
 	}
 
 	function setVolume() {
-		player.setVolume();
+		player.setVolume(document.getElementById("myRange").value);
 	}
 </script>
 </head>
